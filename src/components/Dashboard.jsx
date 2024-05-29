@@ -1,16 +1,25 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-const Dashboard = ({array}) => {
+const Dashboard = () => {
+  const { arr } = useSelector((state) => state.array);
+  
   return (
-    <div className='flex'>
+    <div className='flex gap-1 border-2 items-end'>
       {
-        array.map((ele, idx) => (
+        arr.map((ele, idx) => (
           <div
             key={idx}
-            className={`w-4 h-[${ele*100}px] border border-amber-500 bg-rose-400`}
-            style={{height:`${ele*100}px`}}
+            className='flex flex-col justify-center items-center'
           >
-            ele
+            <p className='text-xs'>
+              {ele}
+            </p>
+            <div
+              className={`w-4 h-[${ele*100}px] border border-amber-500 bg-rose-400 flex items-start justify-center`}
+              style={{height:`${ele*4}px`}}
+            >
+            </div>
           </div>
         ))
       }

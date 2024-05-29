@@ -2,7 +2,9 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <div className='w-full border-2 py-3'>
+        Navbar
+    </div>
   )
 }
 

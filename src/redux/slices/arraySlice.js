@@ -1,30 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    arr: [],
+    arr: [1, 2, 3, 4, 5],
     algo: "Bubble",
-    size: 0,
+    size: 10,
     sorting: false,
 }
 
 export const arraySlice = createSlice({
-    name:'array',
+    name:"array",
     initialState,
     reducers:{
-        setArr: (state, action) => {
-            state.value = action.payload;
+        initialize: (state) => {
+            state.arr = [];
+            for(let i=0; i<state.size; i++){
+                state.arr.push(Math.floor(Math.random()*100)+1);
+            }
+
+            // state.algo = "Bubble";
+            // state.size = 10;
+            // state.sorting = false;
         },
-        setAlgo: (state, action) => {
-            state.value = action.payload;
+        setArr: (state, value) => {
+            state.arr = value.payload;
         },
-        setSize: (state, action) => {
-            state.value = action.payload;
+        setAlgo: (state, value) => {
+            state.algo = value.payload;
         },
-        setSorting: (state, action) => {
-            state.value = action.payload;
+        setSize: (state, value) => {
+            state.size = value.payload;
+        },
+        setSorting: (state, value) => {
+            state.sorting = value.payload;
         }
     }
 })
 
-export const { setArr, setAlgo, setSize, setSorting } = arraySlice.actions;
+export const { initialize, setArr, setAlgo, setSize, setSorting } = arraySlice.actions;
 export default arraySlice.reducer;

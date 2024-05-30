@@ -5,10 +5,13 @@ import Navbar from './components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { initialize, setSorting } from './redux/slices/arraySlice';
 import Bubbles from './components/SortingUtils/Bubbles';
+import Selection from './components/SortingUtils/Selection';
+import Insertion from './components/SortingUtils/Insertion';
+import Merge from './components/SortingUtils/Merge';
+import Quick from './components/SortingUtils/Quick';
 
 function App() {
   const dispatch = useDispatch();
-  const { sorting } = useSelector((state) => state.array)
 
   useEffect(() => {
     dispatch(initialize());
@@ -16,11 +19,11 @@ function App() {
 
   const handleClickRandom = () => {
     dispatch(initialize());
+    dispatch(setSorting(false));
   }
 
   const handleClickSort = () => {
     dispatch(setSorting(true));
-    // console.log("Sorting", sorting);
   }
 
   return (
@@ -53,7 +56,11 @@ function App() {
 
       {/* Sorting Utils */}
       <div>
-        <Bubbles/>
+        {/* <Bubbles/> */}
+        {/* <Selection/> */}
+        <Insertion/>
+        <Merge/>
+        <Quick/>
       </div>
     </div>
   );

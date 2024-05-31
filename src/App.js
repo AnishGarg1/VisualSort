@@ -58,8 +58,8 @@ function App() {
       <div>
         {/* <Bubbles/> */}
         {/* <Selection/> */}
-        <Insertion/>
-        <Merge/>
+        {/* <Insertion/> */}
+        {/* <Merge/> */}
         <Quick/>
       </div>
     </div>

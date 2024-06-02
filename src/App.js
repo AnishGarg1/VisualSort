@@ -29,12 +29,15 @@ function App() {
   return (
     <div className="App bg-teal-400 bg-opacity-80 h-screen w-screen flex flex-col justify-center items-center">
       <h1 className='text-amber-700 font-bold text-xl'>VisualSort App</h1>
-      <div className='flex flex-col w-10/12 h-[90%] justify-between items-center'>
+      <div className='flex flex-col w-10/12 h-[90%] justify-between items-center mt-1'>
         
         <Navbar/>
 
         <div className='flex flex-col gap-2 justify-center items-center w-full'>
-          <Dashboard/>
+          <div className='w-full flex justify-center items-center px-2'>
+            <Dashboard/>
+          </div>
+
 
           <div className='border w-full flex gap-10 justify-center items-center mt-2 py-1 bg-black bg-opacity-15 rounded-md'>
             <button 

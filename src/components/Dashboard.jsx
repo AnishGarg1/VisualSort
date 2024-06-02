@@ -5,13 +5,13 @@ const Dashboard = () => {
   const { arr } = useSelector((state) => state.array);
   
   return (
-    <div className='w-full flex items-end justify-center overflow-x-auto custom-scrollbar'>
-      {/* <div className='w-2 border-b-1'></div> */}
+    <div className=' max-w-max border-b px-1 flex items-end justify-start overflow-x-auto custom-scrollbar'>
+      {/* <div className='w-2 border-b'></div> */}
       {
         arr.map((ele, idx) => (
           <div
             key={idx}
-            className='flex w-4 border-b flex-col justify-center items-center'
+            className='flex w-4 flex-col justify-center items-center min-w-3'
           >
             <p className='text-[8px]'>
               {ele}

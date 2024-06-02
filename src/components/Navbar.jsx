@@ -36,7 +36,11 @@ const Navbar = () => {
           </div>
           <div className='flex gap-2 w-[40%] text-sm justify-center items-center'>
             <label htmlFor='algorithm' className='font-bold'>Algorithm:</label>
-            <select id='algorithm' onChange={(e) => handleChangeAlgo(e)}>
+            <select 
+              id='algorithm' 
+              onChange={(e) => handleChangeAlgo(e)}
+              className='rounded-md px-1'
+            >
               <option value="Bubble">Bubble Sort</option>
               <option value="Selection">Selection Sort</option>
               <option value="Insertion">Insertion Sort</option>

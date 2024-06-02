@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setArr, setSorting } from '../../redux/slices/arraySlice';
+import { ALGO } from '../../constant';
 
 const Insertion = () => {
     const dispatch = useDispatch();
-    const { arr, size, sorting } = useSelector((state) => state.array);
+    const { arr, size, sorting, algo } = useSelector((state) => state.array);
 
     const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -30,7 +31,7 @@ const Insertion = () => {
     }
 
     useEffect(() => {
-        if(sorting){
+        if(sorting && ALGO.INSERTION === algo){
             insertionSort();
         }
     }, [sorting])

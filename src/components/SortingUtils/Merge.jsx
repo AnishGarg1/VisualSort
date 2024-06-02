@@ -2,10 +2,11 @@ import { current } from '@reduxjs/toolkit';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setArr, setSorting } from '../../redux/slices/arraySlice';
+import { ALGO } from '../../constant';
 
 const Merge = () => {
     const dispatch = useDispatch();
-    const { arr, sorting } = useSelector((state) => state.array);
+    const { arr, sorting, algo } = useSelector((state) => state.array);
 
     const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -59,7 +60,7 @@ const Merge = () => {
     }
     
     useEffect(() => {
-        if(sorting){ 
+        if(sorting && ALGO.MERGE === algo){ 
             mergeSort();
         }
     }, [sorting]);
